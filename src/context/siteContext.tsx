@@ -25,9 +25,11 @@ const reducer = (state: State, action: Action) => {
   }
 }
 
+type Props = {
+  children: React.ReactNode
+}
 // Define a provider component
-const SiteProvider = (props) => {
-  const { children } = props
+const SiteProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(reducer, defaultState)
 
   // Wrap dispatch function in a useCallback hook so that it doesn't change on every render
