@@ -13,18 +13,31 @@
     }
 
     h2 {
-        @apply text-3xl text-gothamBlack-300 font-bold;
+        @apply text-3xl text-gothamBlack-50 font-satoshi font-bold;
     }
 
     h3 {
-        @apply text-2xl text-gothamBlack-50 font-satoshi font-bold my-4;
+        @apply text-2xl text-gothamBlack-50 font-satoshi font-bold mb-4;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 160%;
     }
 }
 
 // Here's an example of how to mix and match native scss and tailwind classes to create a reusable component library.
 @layer components {
+
+
+    a {
+        &:hover {
+            @apply text-oceanBlue-600;
+        }
+    }
+
     code {
-        @apply text-gothamBlack-50 bg-gothamBlack-700 rounded p-2;
+        @apply text-gothamBlack-50 bg-gothamBlack-700 rounded p-2 text-sm;
     }
 
     .row {
@@ -32,7 +45,7 @@
     }
 
     .btn-primary {
-        @apply flex px-4 py-2 font-bold text-white rounded cursor-pointer bg-oceanBlue-600 w-fit;
+        @apply flex px-4 py-2 font-bold text-sm text-white rounded cursor-pointer bg-oceanBlue-600 w-fit whitespace-nowrap items-center;
         &:hover {
             background-color: theme("colors.oceanBlue.700");
         }
@@ -40,7 +53,7 @@
     }
 
     .btn-outline {
-        @apply flex px-4 py-2 rounded cursor-pointer bg-transparent border-2 border-gothamBlack-600 w-fit;
+        @apply flex px-4 py-2 text-sm rounded cursor-pointer bg-transparent border-2 border-gothamBlack-600 w-fit whitespace-nowrap items-center;
         &:hover {
             background-color: theme("colors.gothamBlack.800");
         }
