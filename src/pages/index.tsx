@@ -37,6 +37,9 @@ const Home: NextPage = () => {
             <ListItem link='https://tailwindcss.com/' text='Tailwind CSS' />
             <ListItem link='https://framer.com/motion' text='Framer Motion' />
           </ul>
+          <a className='text-lg text-white' href='https://twitter.com/dougiesilkstone'>
+            @dougiesilkstone
+          </a>
         </div>
 
         <h2 className='my-4'>Features</h2>
