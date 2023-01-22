@@ -93,14 +93,24 @@ const Home: NextPage = () => {
                 x: ['20%', '100%', '0%', '70%', '20%'],
                 y: [0, 100, 0],
 
-                rotate: [0, 270, 0, 270, 0],
+                rotate: [0, 270, 0, 1080, 0],
                 borderRadius: ['20%', '20%', '50%', '50%', '20%'],
                 backgroundColor: ['#ff008c', '#d309e1', '#9c1aff', '#7700ff', '#ff008c'],
 
-                transition: { repeat: Infinity, ease: 'easeInOut', duration: 2 }
+                transition: { repeat: Infinity, ease: 'easeInOut', duration: 10 }
               }}
-              className='w-20 h-20 rounded-md bg-gothamBlack-500'
-            />
+              className='flex items-center justify-center w-20 h-20 rounded-md bg-gothamBlack-500'>
+              <motion.div
+                className='w-10 h-10 bg-black rounded-full'
+                animate={{
+                  x: ['0%', '360%', '0%'],
+                  backgroundColor: ['#d309e1', '#ff008c', '#d309e1'],
+                  borderRadius: ['20%', '20%', '50%', '50%', '20%'],
+
+                  transition: { repeat: Infinity, ease: 'easeInOut', duration: 6 }
+                }}
+              />
+            </motion.div>
             <a
               className='self-end mt-auto'
               target={'_blank'}
