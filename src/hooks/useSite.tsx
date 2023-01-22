@@ -1,4 +1,4 @@
 import { useContext } from 'react'
 import SiteContext from '@context/siteContext'
 
-const useSite = () => useContext(SiteContext)
+export const useSite = () => useContext(SiteContext)
