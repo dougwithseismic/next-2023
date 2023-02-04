@@ -1,10 +1,19 @@
-import React, { createContext, useReducer, useCallback, Dispatch } from 'react'
+import React, {
+  createContext,
+  useReducer,
+  useCallback,
+  Dispatch,
+  useMemo,
+} from 'react'
 
 const defaultState = {
-    name: 'My Site',
+  name: 'My Site',
 }
 
-const SiteContext = createContext(defaultState)
+const SiteContext = createContext<[State, Dispatch<Action>]>([
+  defaultState,
+  () => {},
+])
 
 // Define a type for the state object
 type State = typeof defaultState
@@ -15,7 +24,7 @@ const reducer = (state: State, action: Action) => {
     case 'SET_VALUE':
       return {
         ...state,
-        [action.key]: action.value
+        [action.key]: action.value,
       }
     default:
       return state
@@ -30,11 +39,10 @@ const SiteProvider = ({ children }: Props) => {
   const [state, dispatch] = useReducer(reducer, defaultState)
 
   // Wrap dispatch function in a useCallback hook so that it doesn't change on every render
-  const value = useCallback(
+  const value = useMemo(
     () => [state, dispatch] as [State, Dispatch<Action>],
     [state, dispatch]
   )
-
   return <SiteContext.Provider value={value}>{children}</SiteContext.Provider>
 }
 

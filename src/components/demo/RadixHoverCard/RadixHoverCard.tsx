@@ -10,7 +10,8 @@ const RadixHoverCard = () => (
         className='flex gap-2'
         href='https://twitter.com/radix_ui'
         target='_blank'
-        rel='noreferrer noopener'>
+        rel='noreferrer noopener'
+      >
         <Image
           width={32}
           height={32}
@@ -22,7 +23,10 @@ const RadixHoverCard = () => (
       </a>
     </HoverCard.Trigger>
     <HoverCard.Portal>
-      <HoverCard.Content className='p-4 rounded-md shadow-md bg-gothamBlack-700' sideOffset={5}>
+      <HoverCard.Content
+        className='p-4 rounded-md shadow-md bg-gothamBlack-700'
+        sideOffset={5}
+      >
         <div className='flex gap-4'>
           <img
             className='w-16 h-16 rounded-full aspect-square'
@@ -32,11 +36,13 @@ const RadixHoverCard = () => (
           <div className='flex flex-col md:max-w-sm'>
             <div>
               <div className='font-bold text-white'>Radix</div>
-              <a href='https://radix-ui.com' className='Text faded'>radix-ui.com</a>
+              <a href='https://radix-ui.com' className='Text faded'>
+                radix-ui.com
+              </a>
             </div>
             <div className='Text'>
-              Components, icons, colors, and templates for building high-quality, accessible UI.
-              Free and open-source.
+              Components, icons, colors, and templates for building
+              high-quality, accessible UI. Free and open-source.
             </div>
           </div>
         </div>

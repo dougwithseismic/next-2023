@@ -8,7 +8,9 @@
         "prebuild": "ts-node --esm ./src/utility/prebuild.mts",
         "build": "next build",
         "postbuild": "ts-node --esm ./src/utility/postbuild.mts",
-        "start": "next start"
+        "start": "next start",
+        "lint": "next lint --fix",
+        "format": "prettier --write \"src/**/*.{ts,tsx,json,md,yml,scss}\" --color"
     },
     "dependencies": {
         "@radix-ui/react-hover-card": "^1.0.3",
@@ -21,6 +23,12 @@
         "@types/node": "18.11.3",
         "@types/react": "18.0.21",
         "@types/react-dom": "18.0.6",
+        "eslint": "^8.32.0",
+        "eslint-config-next": "^13.1.5",
+        "eslint-plugin-react": "^7.32.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "@typescript-eslint/eslint-plugin": "^5.49.0",
+        "prettier": "^2.8.3",
         "autoprefixer": "^10.4.12",
         "postcss": "^8.4.18",
         "sass": "^1.57.1",
